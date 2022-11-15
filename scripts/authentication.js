@@ -16,7 +16,9 @@ var uiConfig = {
             name: user.displayName,
             email: user.email,
             country: "Canada",                         
-						school: "BCIT"  
+						school: "BCIT",
+            sleepTime: "20:00",
+            sleepHours: "7"  
           }).then(function () {
             console.log("New user added to firestore");
             window.location.assign("main.html");
@@ -24,6 +26,8 @@ var uiConfig = {
           .catch(function (error) {
             console.log(error);
           })
+
+          db.collection("users").doc(user.uid).collection("sleep").doc()
 
       } else {
         return true;
